@@ -49,7 +49,7 @@ export default defineConfig({
             "form_factor": "narrow",
             "label": "Narrower view of Portfolio of Software Developer based in India"
           },
-      ]
+        ] // Added missing closing bracket
       },
       workbox:{
         globPatterns: ['**/*.{js,css,html,ico,png,svg,webp}'],
@@ -71,17 +71,12 @@ export default defineConfig({
             }
           }
         },
-    ]
-          },
-          devOptions:{
-            enabled: true
-          },
-
-        }
-        
-        ),
-      ],
-      
-      
+        ] // Added missing closing bracket
+      },
+      devOptions:{
+        enabled: true
+      },
+    }) // Added missing closing bracket
+  ],
   base: '/'
 });
