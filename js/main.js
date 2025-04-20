@@ -124,3 +124,33 @@
     
 })(jQuery);
 // End of use strict
+
+
+
+
+document.getElementById('showMoreBtn').addEventListener('click', function() {
+    const hiddenCertificates = document.querySelectorAll('.hidden-certificates');
+    const showMoreBtn = document.getElementById('showMoreBtn');
+    
+    hiddenCertificates.forEach(cert => {
+        cert.classList.remove('hidden-certificates');
+        cert.style.animation = 'fadeIn 0.5s ease forwards';
+    });
+    
+    showMoreBtn.style.display = 'none';
+    
+    // Focus on first revealed certificate for accessibility
+    if (hiddenCertificates.length > 0) {
+        hiddenCertificates[0].focus();
+    }
+});
+
+// Add CSS animation
+const style = document.createElement('style');
+style.textContent = `
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+`;
+document.head.appendChild(style);
